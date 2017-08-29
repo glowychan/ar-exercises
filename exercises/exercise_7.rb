@@ -10,3 +10,11 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print 'Enter store name:'
+new_store = gets.chomp
+@store7 = Store.create(name: new_store, annual_revenue: 10000000000, mens_apparel: false, womens_apparel: false)
+messages = @store7.errors.full_messages
+
+messages.each do |error|
+  puts "Error! #{error}"
+end
